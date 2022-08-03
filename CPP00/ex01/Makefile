@@ -1,13 +1,13 @@
-SRC		=	megaphone.cpp
+SRC		=	main.cpp Phonebook.cpp Contact.cpp
 OBJ		=	$(SRC:.cpp=.o)
 
-CCPP	=	c++
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98
+CXX			=	c++
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 NAME	=	phonebook
 
 $(NAME)	:	$(OBJ)
-			$(CCPP) $(CFLAGS) $(OBJ) -o $(NAME)
+			$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 
 all		:	$(NAME)
 
