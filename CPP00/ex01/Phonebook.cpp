@@ -6,7 +6,7 @@
 /*   By: mahmad-j <mahmad-j@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 13:43:00 by mahmad-j          #+#    #+#             */
-/*   Updated: 2022/08/03 20:32:35 by mahmad-j         ###   ########.fr       */
+/*   Updated: 2022/08/08 14:36:40 by mahmad-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ Phonebook::~Phonebook()
 void Phonebook::add_contact(void)
 {
 	this->index = this->count + 1;
-	if (this->count == 3)
+	if (this->count == 8)
 	{
 		this->index = this->oldest;
-		this->oldest == 3 ? this->oldest = 1: this->oldest++;
+		this->oldest == 8? this->oldest = 1: this->oldest++;
 	}
 	if (this->contacts[this->index - 1].set_info(this->index))
-		this->count == 3? this->count = 3: this->count++;
+		this->count == 8? this->count = 8: this->count++;
 }
 
 void Phonebook::search_contact(void)
@@ -54,7 +54,13 @@ void Phonebook::search_contact(void)
 
 		//displays searched contact
 		std::cout << "Enter the index of the contact: ";
-		std::cin >> index;
+		while (!(std::cin >> index) || (index <= 0 || index > this->count))
+		{
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			std::cout << "Error! Invalid index. Enter an index between 0 and " << this->count + 1 << ": ";
+		}
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		if (index > 0)
 			this->contacts[index - 1].print();
 	}
