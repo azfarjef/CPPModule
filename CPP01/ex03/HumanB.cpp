@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahmad-j <mahmad-j@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/09 18:41:07 by mahmad-j          #+#    #+#             */
-/*   Updated: 2022/08/11 15:59:18 by mahmad-j         ###   ########.fr       */
+/*   Created: 2022/08/11 15:15:45 by mahmad-j          #+#    #+#             */
+/*   Updated: 2022/08/11 15:46:03 by mahmad-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#include "HumanB.hpp"
 
-#include <string>
-#include <iostream>
+HumanB::HumanB(std::string name): name(name), weapon(nullptr)
+{
+}
 
-class Weapon {
-	
-	public:
-		Weapon(std::string weapon);
-		~Weapon(void);
-		
-		const std::string&	getType(void) const;
-		bool				setType(const std::string& newType);
-		
-	private:
-		std::string	type;
-};
+HumanB::~HumanB()
+{
+}
 
-#endif
+void	HumanB::attack(void) const
+{
+	if (this->weapon)
+		std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
+	else
+		std::cout << this->name << " does not have a weapon" << std::endl;
+}
+
+void	HumanB::setWeapon(Weapon& weapon)
+{
+	this->weapon = &weapon;
+}

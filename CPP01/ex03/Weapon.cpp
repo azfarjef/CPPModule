@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahmad-j <mahmad-j@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/09 18:41:07 by mahmad-j          #+#    #+#             */
-/*   Updated: 2022/08/11 15:59:18 by mahmad-j         ###   ########.fr       */
+/*   Created: 2022/08/11 14:33:32 by mahmad-j          #+#    #+#             */
+/*   Updated: 2022/08/11 15:59:27 by mahmad-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#include "Weapon.hpp"
 
-#include <string>
-#include <iostream>
+Weapon::Weapon(std::string weapon): type(weapon)
+{
+}
 
-class Weapon {
-	
-	public:
-		Weapon(std::string weapon);
-		~Weapon(void);
-		
-		const std::string&	getType(void) const;
-		bool				setType(const std::string& newType);
-		
-	private:
-		std::string	type;
-};
+Weapon::~Weapon(void)
+{
+}
 
-#endif
+const std::string&	Weapon::getType(void) const
+{
+	return (this->type);
+}
+
+bool	Weapon::setType(const std::string& newType)
+{
+	if (newType == "")
+	{
+		std::cout << "New type cannot be an empty string\n";
+		return (false);
+	}
+	this->type = newType;
+	return (true);
+}

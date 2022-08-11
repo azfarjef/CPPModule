@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahmad-j <mahmad-j@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/09 18:41:07 by mahmad-j          #+#    #+#             */
-/*   Updated: 2022/08/11 15:59:18 by mahmad-j         ###   ########.fr       */
+/*   Created: 2022/08/11 14:23:44 by mahmad-j          #+#    #+#             */
+/*   Updated: 2022/08/11 15:30:45 by mahmad-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
 
-#include <string>
-#include <iostream>
+#include "Weapon.hpp"
 
-class Weapon {
-	
+class HumanA {
 	public:
-		Weapon(std::string weapon);
-		~Weapon(void);
-		
-		const std::string&	getType(void) const;
-		bool				setType(const std::string& newType);
-		
+		HumanA(std::string name, Weapon& weapon);
+		~HumanA(void);
+
+		void	attack(void) const;
+
 	private:
-		std::string	type;
+		std::string	name;
+		Weapon&		weapon;
 };
 
 #endif
