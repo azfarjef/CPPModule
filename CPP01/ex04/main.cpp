@@ -6,7 +6,7 @@
 /*   By: mahmad-j <mahmad-j@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 16:26:01 by mahmad-j          #+#    #+#             */
-/*   Updated: 2022/08/11 19:46:21 by mahmad-j         ###   ########.fr       */
+/*   Updated: 2022/08/12 08:08:51 by mahmad-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ void	outputToFile(std::string content, std::string fileName)
 	std::ofstream	ofs;
 
 	fileName += ".replace";
-	ofs.open(fileName);
+	// ofs.open(fileName); for mac
+	ofs.open(fileName.c_str());
 	// std::cout << fileName << std::endl;
 	ofs << content;
 }
@@ -34,11 +35,16 @@ void	replaceString(std::string* str, std::string s1, std::string s2, std::ifstre
 			(*str).insert(i, s2);
 		}
 	}
+	
 }
 
 int	main(int ac, char** av)
 {
-	(void)ac;
+	if (ac != 4)
+	{
+		std::cout << "Wrong arguments; example: ./main file1 line haha\n";
+		return (1);
+	}
 	std::ifstream	ifs(av[1]);
 	std::string		str;
 	std::string		s1 = av[2];

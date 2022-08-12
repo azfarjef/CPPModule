@@ -4,7 +4,7 @@ OBJ		=	$(SRC:.cpp=.o)
 CXX			=	c++
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98 -pedantic #-fsanitize=address
 
-NAME	=	main
+NAME	=	harlFilter
 
 $(NAME)	:	$(OBJ)
 			$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
