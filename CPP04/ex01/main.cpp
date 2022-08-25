@@ -6,7 +6,7 @@
 /*   By: mahmad-j <mahmad-j@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 16:55:15 by mahmad-j          #+#    #+#             */
-/*   Updated: 2022/08/25 18:12:08 by mahmad-j         ###   ########.fr       */
+/*   Updated: 2022/08/25 17:35:43 by mahmad-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ int	main(void)
 
 	delete wrongi;
 	delete wrongmeta;
-	
-	system("leaks animal");
+
 	return 0;
 }
