@@ -6,7 +6,7 @@
 /*   By: mahmad-j <mahmad-j@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 16:55:15 by mahmad-j          #+#    #+#             */
-/*   Updated: 2022/08/25 18:12:08 by mahmad-j         ###   ########.fr       */
+/*   Updated: 2022/10/19 20:24:55 by mahmad-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ int	main(void)
 	const WrongAnimal* wrongmeta = new WrongAnimal();
 	const WrongAnimal* wrongi = new WrongCat();
 	
-	wrongi->makeSound(); //will output the cat sound!
+	wrongi->makeSound(); //will output the wronganimal sound!
 	wrongmeta->makeSound();
 
 	delete wrongi;
 	delete wrongmeta;
 	
-	system("leaks animal");
+	// system("leaks animal");
 	return 0;
 }

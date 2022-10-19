@@ -6,7 +6,7 @@
 /*   By: mahmad-j <mahmad-j@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 15:00:11 by mahmad-j          #+#    #+#             */
-/*   Updated: 2022/08/25 17:00:30 by mahmad-j         ###   ########.fr       */
+/*   Updated: 2022/10/05 13:36:05 by mahmad-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Animal::~Animal()
 Animal	&Animal::operator=(const Animal &inst)
 {
 	std::cout << "Animal copy assignment called" << std::endl;
-	this->type = inst.type;
+	this->type = inst.getType();
 	return (*this);
 }
 

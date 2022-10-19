@@ -1,4 +1,4 @@
-SRC		=	main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
+SRC		=	main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 OBJ		=	$(SRC:.cpp=.o)
 
 CXX			=	c++
@@ -10,7 +10,7 @@ $(NAME)	:	$(OBJ)
 			$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 
 .cpp.o	:
-			${CXX} ${CXXFLAGS} -c $< -o ${<:.cpp=.o}
+			${CXX} ${CXXFLAGS} -c $< -o $@
 
 all		:	$(NAME)
 
